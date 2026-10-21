@@ -7,11 +7,10 @@ import './App.css'
 
 const URL="https://api.github.com/users/mauriciomacochapi-oss"
 
-
 function App() {
 
 
-  const [datos, setDatos] = useState(null); 
+  const [datos, setDatos] = useState(null);
   const [error, setError] = useState(null);
   const [cargando, setCargando] = useState(true);
 
@@ -49,6 +48,7 @@ function App() {
     <>
       <h2>{datos.login}</h2>
       <img src={datos.avatar_url} alt="" width="150px"/>
+
     </>
   )
 }
