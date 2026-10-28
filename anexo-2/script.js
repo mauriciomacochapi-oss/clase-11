@@ -4,7 +4,7 @@
 async function crearTarea(tarea){
     const respuesta = await fetch("http://localhost:3000/tareas", {
         method: "POST",
-        headers: {"content-Type": "application/json"},
+        headers: { "content-Type": "application/json" },
         body: JSON.stringify({
             tarea: tarea,
             hecha: false,
@@ -32,7 +32,7 @@ async function borraTarea(id){
 }
 //borraTarea("sqdUOTmbKXU")
 
-async function modificarTarea(id, estado) {
+async function marcarTareaHecha(id, estado) {
     const respuesta = await fetch(`http://localhost:3000/tareas/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json"},
@@ -44,4 +44,16 @@ async function modificarTarea(id, estado) {
     console.log(tareaModificada);
     return tareaModificada;
 }
-modificarTarea("1xw84dq2kqo", true)
+marcarTareaHecha("1xw84dq2kqo", true)
+
+async function modificarTareaCompleta(id, tarea, estado){
+    const respuesta = await fetch(`http://localhost:3000/tareas/${id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            Mod_Tarea: 
+        }),
+
+    });
+}
+modificarTareaCompleta()
