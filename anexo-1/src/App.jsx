@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
-import './App.css'
-
+import { useState } from "react";
+import "./App.css";
+import { useEffect } from "react";
 
 const URL="https://api.github.com/users/mauriciomacochapi-oss"
 
@@ -46,11 +46,12 @@ function App() {
 
   return (
     <>
-      <h2>{datos.login}</h2>
-      <img src={datos.avatar_url} alt="" width="150px"/>
+      <img src={datos.avatar_url} alt={datos.avatar_url || datos.name} />
+      <h2>{datos.name}</h2>
+      
 
     </>
-  )
+  );
 }
 
-export default App
+export default App;
