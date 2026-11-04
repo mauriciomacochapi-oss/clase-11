@@ -1,9 +1,14 @@
 {
   "tareas": [
     {
-      "tarea": "Hacer la tarea de javascript",
-      "hecha": true,
+      "tarea": "esta es la nueva tarea",
+      "hecha": false,
       "id": "1xw84dq2kqo"
+    },
+    {
+      "tarea": "cambio ruedas",
+      "hecha": true,
+      "id": "iOaYlF3DXBs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
