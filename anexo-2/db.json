@@ -1,13 +1,8 @@
 {
   "tareas": [
     {
-      "tarea": "esta es la nueva tarea",
+      "tarea": "",
       "hecha": false,
-      "id": "1xw84dq2kqo"
-    },
-    {
-      "tarea": "cambio ruedas",
-      "hecha": true,
       "id": "iOaYlF3DXBs"
     }
   ],
