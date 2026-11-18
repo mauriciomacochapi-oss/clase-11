@@ -61,7 +61,8 @@ async function modificarTareaCompleta(id, tarea, estado){
     }
     console.log("tarea eliminada", id);
 }
-borraTarea("999999999")
+//borraTarea("999999999")
+
 //estado:error-->404
 //lo que muestra seria lo mismo porque no borra la id
 /*    POST = crear.
@@ -73,4 +74,36 @@ borraTarea("999999999")
     PATCH = modificar una parte.
 
     DELETE = eliminar.
+*/
+/*Error: Error al borrar la tarea 404
+    at borraTarea (/home/etec/Documentos/clase-11/anexo-2/ejercicio-2.js:60:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+*/    
+async function marcarTareaSinID(id, estado) {
+    const respuesta = await fetch(`http://localhost:3000/tareas/${id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify({
+            hecha: estado,
+        }),
+    });
+    const tareaModificada = await respuesta.json();
+    console.log(tareaModificada);
+    return tareaModificada;
+}
+//marcarTareaSinID("", true)
+//codigo de estado:{ error: 'Not Found' }
+/*
+- ¿En cuáles se disparó el `catch` **solo**, sin que vos chequearas nada? 
+    aparecio esto:{ error: 'Not Found' },porque no es un comando configurado que puse
+  
+  ¿En cuáles tuviste que chequear `respuesta.ok` para enterarte?
+
+- El `PUT` con solo `hecha`: ¿el servidor contestó con error?  
+¿Entonces salió "bien"? 
+
+¿Para quién?
+- Sin el `JSON.stringify`, ¿qué texto le llegó al servidor?  
+¿De dónde sale ese texto?
+
 */
